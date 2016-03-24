@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-xs-12 col-sm-9">
+<div id="map" style="width: 1900px;"></div>
+
+<div id="map-side-bar">
+    {% for place in parking_list %}
+    <div class="map-location" data-jmapping="{id: 1, point: {lng: {{place.lng}}, lat: {{place.lat}}}, category: '{{place.accessible}}'}">
+    <div class="info-box">
+      <p class="access text-center"><strong>{{place.accessible}}</strong></p>
+      <img class="sv text-center" src="http://maps.googleapis.com/maps/api/streetview?size=200x200&location={{place.lat}},{{place.lng}}&fov=90&heading=235&pitch=10" />
+      <p class="place-name text-center">{{place.name}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+$(document).ready(function(){
+          $('#map').jMapping({
+            category_icon_options: function(category){
+            if (category.charAt(0).match(/[a-d]/i)){
+              return new google.maps.MarkerImage('https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/50x50/bdd2264ffac78d679c5a223bd5e46c93/icon_parking_enabled.png');
+            } else if (category.charAt(0).match(/[e-z]/i)){
+              return new google.maps.MarkerImage('https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/50x50/09fefafa0662b2f9a6d5e5e7c7f377f7/icon_parking_disabled.png');
+            } else {
+              return {color: '#7CDF65'};
+          }
+      }
+    });
+    });
+</script>
+{% endblock js %}

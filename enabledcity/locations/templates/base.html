@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+  <html lang="en">
+    <head>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
+    
+      <!-- START META INFORMATIONS -->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="keywords" content="EnabledCity is a new city...">
+      <meta name="description" content="some text">
+      
+      <title>Enabled City</title>
+      <link rel="shortcut icon" href="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/16x16/df5379f5e002d17d2b00f1e9ba5f2d18/favicon.ico">
+      
+      <!-- ACTIVATE RESPONSIVE DESIGN -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <!-- CORE CSS FILES -->
+      <link href="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/fe32ff41d201df7973145c77925c188b/bootstrap.min.css" rel="stylesheet">
+      
+      <!-- CUSTOM CSS FILES -->
+      <link href="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/95d00fe124156a8f84297ef4bd808c77/style.css" type="text/css" rel="stylesheet">
+      
+      <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+<body>
+    
+      <!-- START CONTAINER -->
+      <div class="page-container">
+      
+        <!-- START DESKTOP NAVIGATION -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand hidden-md hidden-sm hidden-xs" href="{% url 'home' %}">
+              <img class="logo" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/172x50/4ee844accb7d3cb44e397ad9c109f22d/logo.png">
+            </a>
+            <a class="navbar-brand text-mobile" href="{% url 'home' %}">
+              <img class = "left" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/32x32/98c40ce605fc0bf72b961e7b88007af1/left.png"><span class="places">All places</span>
+            </a>
+          </div>
+          
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav text-center col-lg-9" style="margin-top: 0px; padding-top: 0px;">
+              <li class="desktop-icon culture-icon col-lg-1 col-sm-3 col-xs-4 text-center">
+                <a href="{% url 'culture' %}">
+                  <img class="culture-icon" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/9083f79c61124027679ddcea24b2d0a6/culture.png"><br />
+                  <span class="menu-text">Culture</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'food' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/ebb41615bc244b3ef3fb6dce1bc01f3a/food.png"><br />
+                  <span class="menu-text">Food</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'hospital' %}">
+                  <img class="hospital-icon" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/e89de503f7d3279d744ace25caf0579f/hospital.png"><br />
+                  <span class="menu-text">Hospital</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'parking' %}">
+                  <img class="parking-icon" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/6d058898e5e25575639838f3efe766d6/parking.png"><br />
+                  <span class="menu-text">Parking</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'public' %}">
+                  <img class="public-icon" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/1a800c2f4180104ebadafe7d70a5c5a3/public.png"><br />
+                  <span class="menu-text">Public</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'sport' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/94fe9ac7c6ca7986cf739adaba411d78/sport.png"><br />
+                 <span class="menu-text"> Sport</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'travel' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/37x37/f961397c48b9c7f6da0dc07cc398ee13/travel.png"><br />
+                  <span class="menu-text">Travel</span>
+                </a>
+              </li>
+              <li class="desktop-icon col-lg-1 col-sm-3 col-xs-4">
+                <a href="{% url 'wc' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/37x37/34d9702b29501296abc74d8d724cc0fd/wc.png"><br />
+                 <span class="menu-text-w"> WC</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+       </div>
+       <!-- END DESKTOP NAVIGATION -->
+       
+       <!-- START MOBILE NAVIGATION -->
+       <div class="row row-offcanvas row-offcanvas-left">
+          <div class="col-xs-6 col-sm-6 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav">
+              <li class="mobile-icon culture1 text-center">
+                <a href="{% url 'culture' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/9083f79c61124027679ddcea24b2d0a6/culture.png" style="margin-left: 22px;"><br />
+                  <span class="text-center" style="margin-left: 15px;">Culture</span>
+                </a>
+              </li>
+              <li class="mobile-icon food1 text-center">
+                <a href="{% url 'food' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/ebb41615bc244b3ef3fb6dce1bc01f3a/food.png" style="margin-left: 15px;"><br />
+                  <span class="text-center" style="margin-left: 15px;">Food</span>
+                </a>
+              </li>
+              <li class="mobile-icon hospital1 text-center">
+                <a href="{% url 'hospital' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/e89de503f7d3279d744ace25caf0579f/hospital.png" style="margin-left: 22px;"><br />
+                  <span class="text-center" style="margin-left: 15px;">Hospital</span>
+                </a>
+              </li>
+              <li class="mobile-icon parking1 text-center">
+                <a href="{% url 'parking' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/6d058898e5e25575639838f3efe766d6/parking.png" style="margin-left: 15px;"><br />
+                 <span class="text-center" style="margin-left: 10px;"> Parking</span>
+                </a>
+              </li>
+              <li class="mobile-icon public1 text-center">
+                <a href="{% url 'public' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/1a800c2f4180104ebadafe7d70a5c5a3/public.png" style="margin-left: 22px;"><br />
+                  <span class="text-center" style="margin-left: 18px;">Public</span>
+                </a>
+              </li>
+              <li class="mobile-icon sport1 text-center">
+                <a href="{% url 'sport' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/35x35/94fe9ac7c6ca7986cf739adaba411d78/sport.png" style="margin-left: 15px;"><br />
+                  <span class="text-center" style="margin-left: 15px;">Sport</span>
+                </a>
+              </li>
+              <li class="mobile-icon travel1 text-center">
+                <a href="{% url 'travel' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/37x37/f961397c48b9c7f6da0dc07cc398ee13/travel.png" style="margin-left: 22px;"><br />
+                  <span class="text-center" style="margin-left: 18px;">Travel</span>
+                </a>
+              </li>
+              <li class="mobile-icon wc1 text-center">
+                <a href="{% url 'wc' %}">
+                  <img src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/37x37/34d9702b29501296abc74d8d724cc0fd/wc.png" style="margin-left: 15px;"><br />
+                         <span class="text-center" style="margin-left: 18px;"> WC</span>
+                </a>
+              </li>              
+            </ul>
+        </div>
+        <!-- END MOBILE NAVIGATION -->
+
+        {% block content %}
+        
+{% endblock content %}
+
+
+
+<script src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a0b0f24088d22527c070b5/2358185e4897b5f57bba3c27af428294/quant.js" async type="text/javascript"></script>
+      <script type="text/javascript" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a0b0f24088d22527c070b5/d300fce83f195865b7734a597181143e/jquery.min.js"></script>
+      <script type="text/javascript" src="https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a0b0f24088d22527c070b5/4baa77dfeef33f2939a15de7a7ea1ff6/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
+<script type="text/javascript" src="https://trello-attachments.s3.amazonaws.com/52b0a34efe66a6b108015e14/538a35c234498f4396507b44/249c8e12a1045b02b06bd6937ddaec74/markermanager.js"></script>
+<script type="text/javascript" src="https://trello-attachments.s3.amazonaws.com/52b0a34efe66a6b108015e14/538a35c234498f4396507b44/222d926c4320e6dcdad6544464672be4/StyledMarker.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://trello-attachments.s3.amazonaws.com/52b0a34efe66a6b108015e14/538a35c234498f4396507b44/f5d4f7e87856d3b371b2acfffcd528c0/jquery.metadata.js"></script>
+<script type="text/javascript" src="https://trello-attachments.s3.amazonaws.com/52b0a34efe66a6b108015e14/538a35c234498f4396507b44/2a470081db470d3df8261f64bdc3f42e/jquery.jmapping.min.js"></script>
+
+{% block js %}
+
+{% endblock js %}
+
+<script type="text/javascript">
+        $(document).ready(function() {
+          $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+          });
+        });
+      </script>
+      
+      <script type="text/javascript">
+        var _qevents = _qevents || [];
+        
+        (function() {
+        var elem = document.createElement('script');
+        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+        elem.async = true;
+        elem.type = "text/javascript";
+        var scpt = document.getElementsByTagName('script')[0];
+        scpt.parentNode.insertBefore(elem, scpt);
+        })();
+        
+        _qevents.push({
+        qacct:"p-0cXb7ATGU9nz5"
+        });
+        </script>
+</body>
+</html>

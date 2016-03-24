@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-xs-12 col-sm-9">
+<div id="map" style="width: 1900px;"></div>
+
+<div id="map-side-bar">
+    {% for place in culture_list %}
+    <div class="map-location" data-jmapping="{id: 1, point: {lng: {{place.lng}}, lat: {{place.lat}}}, category: '{{place.accessible}}'}">
+    <a href="#" class="map-link">{{place.name}}</a>
+    <div class="info-box">
+      <p>{{ place.name }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+$(document).ready(function(){
+          $('#map').jMapping({
+            category_icon_options: function(category){
+            if (category.charAt(0).match(/[a-d]/i)){
+              return new google.maps.MarkerImage('https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/50x50/ad550741b57ebbf269e53ac39aeddf2e/icon_culture_enabled.png');
+            } else if (category.charAt(0).match(/[e-z]/i)){
+              return new google.maps.MarkerImage('https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/50x50/36f97c85ef1a4b2f60e0ca968c6258a7/icon_culture_disabled.png');
+            } else {
+              return {color: '#7CDF65'};
+          }
+      }
+    });
+    });
+</script>
+{% endblock js %}

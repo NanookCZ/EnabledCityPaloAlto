@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-xs-12 col-sm-9">
+<div id="map" style="width: 1900px;"></div>
+
+<div id="map-side-bar">
+    {% for place in public_list %}
+    <div class="map-location" data-jmapping="{id: 1, point: {lng: {{place.lng}}, lat: {{place.lat}}}, category: '{{place.accessible}}'}">
+    <a href="#" class="map-link">{{place.name}}</a>
+    <div class="info-box">
+      <p>{{ place.name }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+$(document).ready(function(){
+          $('#map').jMapping({
+            category_icon_options: function(category){
+            if (category.charAt(0).match(/[a-d]/i)){
+              return new google.maps.MarkerImage('https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/50x50/fd77a43eb353969ecd08284c62abb8a0/icon_public_enabled.png');
+            } else if (category.charAt(0).match(/[e-z]/i)){
+              return new google.maps.MarkerImage('https://trello-attachments.s3.amazonaws.com/525891a2c373fd773e0033d7/53a43522453e61f2deb33e37/50x50/e8630d88b466df236292abe22a2c085d/icon_public_disabled.png');
+            } else {
+              return {color: '#7CDF65'};
+          }
+      }
+    });
+    });
+</script>
+{% endblock js %}
